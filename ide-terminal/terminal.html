@@ -7,13 +7,14 @@
 		<script src="js/jquery.terminal.min.js"></script>
 		<link href="css/jquery.terminal.css" rel="stylesheet" />
 	</head>
-<body onload="connectToTerminal()">
+	<body onload="connectToTerminal()">
 		<script>
 			window.terminalSocket = null;
 			var connectToTerminal = function() {
+				const TERMINAL_URL = "/websockets/v3/ide/terminal";
 				try {
 					if (window.terminalSocket === null || window.terminalSocket.readyState !== window.terminalSocket.OPEN) {
-						window.terminalSocket = new WebSocket(((location.protocol === 'https:') ? "wss://" : "ws://") + window.location.host + "/terminal");
+						window.terminalSocket = new WebSocket(((location.protocol === 'https:') ? "wss://" : "ws://") + window.location.host + TERMINAL_URL);
 					}
 				} catch (e) {
 					console.error(e.message);
@@ -58,5 +59,6 @@
 								}
 							});
 				});
-	</script>
-</body> 
+		</script>
+	</body>
+</html>
