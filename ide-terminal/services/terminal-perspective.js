@@ -10,9 +10,10 @@
  */
 exports.getPerspective = function () {
 	return {
-		"name": "Terminal",
-		"link": "../ide-terminal/index.html",
-		"order": "120",
-		"image": "terminal"
+		name: "Terminal",
+		link: "../ide-terminal/index.html",
+		order: "120",
+		image: "terminal", // deprecated
+		icon: "../ide-terminal/images/terminal.svg",
 	};
 }
